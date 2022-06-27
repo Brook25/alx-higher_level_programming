@@ -21,7 +21,7 @@ int check_cycle(listint_t *list)
 		if (list == pr)
 		{
 			list = prev;
-			pr =  pr;
+			prev =  pr;
 			while (1)
 			{
 				pr = prev;
