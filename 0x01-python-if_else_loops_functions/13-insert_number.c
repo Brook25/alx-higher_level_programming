@@ -39,12 +39,12 @@ listint_t *insert_node(listint_t **head, int number)
 	while (actual)
 	{
 		if (!after)
-			actual->next = new_node, flag = 1;
+			actual->next = new_node, flag1 = 1;
 		else if (after->n == number)
-			actual->next = new_node, new_node->next = after, flag = 1;
+			actual->next = new_node, new_node->next = after, flag1 = 1;
 		else if (after->n > number && actual->n < number)
-			actual->next = new_node, new_node->next = after, flag = 1;
-		if (flag)
+			actual->next = new_node, new_node->next = after, flag1 = 1;
+		if (flag1)
 			break;
 		after = after->next, actual = actual->next;
 	}
