@@ -9,6 +9,6 @@ def roman_to_int(roman_string):
         for key in rom_dict:
             if stg[i] == key:
                 add += rom_dict[key]
-                    if i < len(stg) - 1 and rom_dict[stg[i]] < rom_dict[stg[i + 1]]:
-                        add -= 2 * rom_dict[stg[i]]
+                if i < len(stg) - 1 and rom_dict[stg[i]] < rom_dict[stg[i + 1]]:
+                    add -= 2 * rom_dict[stg[i]]
     return add
