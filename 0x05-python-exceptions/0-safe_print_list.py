@@ -5,7 +5,7 @@ def safe_print_list(my_list=[], x=0):
         try:
             if x == j:
                 break
-                print(elem, end="")
+            print(elem, end="")
         except IndexError:
             print("Error")
         j += 1
