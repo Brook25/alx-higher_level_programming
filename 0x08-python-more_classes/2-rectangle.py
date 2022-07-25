@@ -5,7 +5,7 @@ Class Rectangle: Defines Rectangle
 
 
 class Rectangle:
-    """ class that defines a Rectangle with certain attributes and public methods"""
+    """ class that defines a Rectangle with attributes and public methods"""
     def __init__(self, width=0, height=0):
         """ Initializes instances """
         self.width = width
