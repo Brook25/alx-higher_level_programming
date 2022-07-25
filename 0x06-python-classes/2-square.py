@@ -7,7 +7,7 @@ class Square:
     """ A Class that defines square objects """
     def __init__(self, size=0):
         try:
-            if type(size) is int is False:
+            if (type(size) is int) is False:
                 raise TypeError
         except TypeError:
             print("size must be an integer", end="")
