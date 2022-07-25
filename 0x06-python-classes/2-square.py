@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-'''
+"""
 Class Square: Defines a square
-'''
+"""
 
 class Square:
-    ''' A Class that defines square objects '''
+    """ A Class that defines square objects """
     def __init__(self, size=0):
         try:
             if type(size) is not int:
