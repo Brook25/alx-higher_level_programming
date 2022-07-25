@@ -1,15 +1,22 @@
-#!/usr/bin/python3
-"""
-Square Class: Define a Square with private instance
-"""
-
+'''
+Creates empty class
+'''
 
 class Square:
-    """ class Square that defines a square """
+    ''' A class that defines square objects '''
     def __init__(self, size=0):
-        """ initialize variables """
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if (size < 0):
-            raise ValueError('size must be >= 0')
-        self.__size = size
+        ''' Initializes an object with size instance attribute '''
+        try:
+            if type(size) is not int:
+                raise TypeError
+        except TypeError:
+            print("size must be an integer", end="")
+            raise
+        try:
+            if size < 0:
+                raise ValueError
+        except ValueError:
+            print("size must be >= 0", end="")
+            raise
+        else:
+            self.__size = size
