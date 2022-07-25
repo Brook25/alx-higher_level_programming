@@ -5,7 +5,7 @@ Creates empty class
 class Square:
     ''' A class that defines square objects '''
     def __init__(self, size=0):
-        ''' Initializes an object with size instance attribute '''
+    ''' Initializes an object with size instance attribute '''
         try:
             if type(size) is not int:
                 raise TypeError
