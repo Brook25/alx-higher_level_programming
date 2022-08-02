@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""This Module,
-adds all arguments to a Python list,
-and saves them to a file.
+"""Module 7-add_item.
+Adds all arguments to a Python list,
+and then save them to a file.
 """
 
 import sys
