@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This Module
+"""This Module,
 adds all arguments to a Python list,
 and saves them to a file.
 """
