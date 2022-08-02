@@ -4,7 +4,7 @@ This Module defines classes Node and Singly linked list
 In the Node Class a Node of a sinlgy linked list is initialized.
 In the Class sinlgy linked list a singly linked list is initialized.
 and also a method is provided where the list can be sorted while insertion
-of an element
+of an element is implemented
 """
 
 
@@ -52,7 +52,7 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """Object Method to implement sorted insert"""
         if self.__head.next_node is None:
-            self.__head.next_node = Node(value, None)
+            self.__head.next_node = Node(value)
         else:
             temp = self.__head.next_node
             temp1 = self.__head
