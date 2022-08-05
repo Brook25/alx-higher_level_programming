@@ -16,32 +16,32 @@ class Rectangle:
         Rectangle.number_of_instances += 1
 
     @property
-    def height(self):
+    def width(self):
         """Property checker for Height attribute"""
-        return self.__height
+        return self.__width
 
     @height.setter
-    def height(self, value):
+    def width(self, value):
         """Sets height of Rectangle"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        self.__width = value
 
     @property
-    def width(self):
+    def height(self):
         """Property checker for attribute width"""
-        return self.__width
+        return self.__height
 
-    @width.setter
-    def width(self, value):
+    @height.setter
+    def height(self, value):
         """Sets attribute width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        self.__height = value
 
     def area(self):
         """Public instance attribute returns area of Rectangle"""
@@ -57,8 +57,7 @@ class Rectangle:
         """string representation of the object"""
         if self.__height == 0 or self.__width == 0:
             return ""
-        out_put = ("{}".format(self.print_symbol) * self.__width + '\n')\
-            * self.__height
+        out_put = (f"{self.print_symbol}" * self.__width + '\n') * self.__height
         return out_put[:-1]
 
     def __repr__(self):
