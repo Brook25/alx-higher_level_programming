@@ -20,7 +20,7 @@ class Rectangle:
         """Property checker for Height attribute"""
         return self.__width
 
-    @height.setter
+    @width.setter
     def width(self, value):
         """Sets height of Rectangle"""
         if type(value) is not int:
