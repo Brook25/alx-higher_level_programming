@@ -6,6 +6,7 @@ This Module defines a Printable Rectangle.
 
 class Rectangle:
     """Class Rectangle"""
+    
     number_of_instances = 0
     print_symbol = '#'
 
