@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This Module contains a class that inherits from list and,
+This Module contains a class that inherits from List and,
 prints a sorted version of it.
 """
 
