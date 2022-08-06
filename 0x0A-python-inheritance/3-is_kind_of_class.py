@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 """
-This program checks if an object of a class or an inherited Class
+This Module contains a function that checks if an object is,
+of a class whether that class is a parent class or not.
 """
 
 
 def is_kind_of_class(obj, a_class):
-    """
-    Returns True if the object is an instance of,
-    or if the object is an instance of a class that inherited from,
-    the specified class; otherwise False.
-    """
-    return isinstance(obj, a_class)
+    """Function checks if an object is of a class"""
+    return issubclass(type(obj), a_class)
