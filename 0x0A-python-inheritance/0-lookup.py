@@ -7,4 +7,4 @@ Contains the definition of the function lookup
 def lookup(obj):
     """Returns list of attributes and methods of an object"""
 
-    return list(obj.__dict__)
+    return list(dir(obj))
