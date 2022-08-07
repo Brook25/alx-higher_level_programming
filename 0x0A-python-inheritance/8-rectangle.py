@@ -1,23 +1,18 @@
 #!/usr/bin/python3
 """
-Contains definition of Class Reactangle that inherits from BaseGeometry.
+Module contains a Class that inhertis from,
+Class BaseGeometry
 """
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+from Class_Base_Geometry import BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Defnifition of class Rectangle that inherits from BaseGeometry.
-       Attributes:
-            width (int): width of the rectangle.
-            height (int) height of the rectangle.
-    """
-
+    """Class Rectangle that defines a Rectangle object"""
+    
     def __init__(self, width, height):
-        """Initializes an instance of class Rectangle"""
-
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-
+        self.integer_validator('width', width)
+        self.integer_validator('height', height)
         self.__width = width
         self.__height = height
