@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-This module contains a Class BaseGeometry,
-that calculates base gemotry of an object.
+This module contains a Class
+BaseGeometry
 """
 
 
 class BaseGeometry:
-    """Class has public instance methods"""
+    """Class public instance methods"""
     
     def area(self):
         """Raises an exception"""
