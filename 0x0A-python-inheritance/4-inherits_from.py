@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This Module contains a funciton checks if an object is from a class
+This Module contains a funciton checks if an object is from a class,
 that inherits directly or indirectly from another class.
 """
 
