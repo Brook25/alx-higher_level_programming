@@ -6,7 +6,8 @@ inherits directly or indirectly from another class.
 
 
 def inherits_from(obj, a_class):
-    """Function checks if an object is an instance of a calss that inherits from another class"""
+    """Function checks if an object of a class is inherited"""
     if a_class is not obj:
-        return issubclass(type(obj), a_class)
+        return False
+    return issubclass(type(obj), a_class)
 
