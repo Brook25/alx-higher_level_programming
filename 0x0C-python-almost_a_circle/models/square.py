@@ -1,54 +1,93 @@
 #!/usr/bin/python3
-""" Program that defines a Square in base from Rectangle """
-from . rectangle import Rectangle
+"""Module square.
+Create a Square class, inheriting from Rectangle.
+"""
+
+from models.base import Base
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ class Square inherits from Rectangle """
+    """Class describing a square.
+    Public instance methods:
+        - area()
+        - display()
+        - to_dictionary()
+        - update()
+    Inherits from Rectangle.
+    """
+
     def __init__(self, size, x=0, y=0, id=None):
-        """ Constructor """
+        """Initializes a Square instance.
+        Args:
+            - __size: size
+            - __x: position
+            - __y: position
+            - id: id
+        """
+
+        self.size = size
         super().__init__(size, size, x, y, id)
+
+    def __str__(self):
+        """Returns a string representation of a Square instance."""
+
+        s = "[Square] ({}) {}/{} - {}".format(
+            self.id, self.x, self.y, self.__width)
+        return s
 
     @property
     def size(self):
-        """ Retriebe the size of square """
-        return (self.width)
+        """Retrieves the size attribute."""
+
+        return self.__width
 
     @size.setter
     def size(self, value):
-        """ set passet private attribute of size """
-        self.width = value
-        self.height = value
+        """Sets the size attribute."""
 
-    def __str__(self):
-        """ overriding the __str__ method that returns a custom string """
-        mssg = "[Square] ({:d}) {:d}/{:d} - {:d}"\
-            .format(self.id, self.x, self.y, self.width)
-        return (mssg)
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+        self.__height = value
 
     def update(self, *args, **kwargs):
-        """ Method that assigns an argument to each attribute
-        by Non-keyword and key/value"""
-        arlist = ["id", "size", "x", "y"]
-        if (args and len(args) != 0):
-            for arl in range(len(args)):
-                if (arl == 0):
-                    super().update(args[arl])
-                elif (arl < len(arlist)):
-                    setattr(self, arlist[arl], args[arl])
+        """Updates attributes of an instance.
+        Args:
+            - id attribute
+            - size attribute
+            - x attribute
+            - y attribute
+        """
+
+        if args is not None and len(args) != 0:
+            if len(args) >= 1:
+                if type(args[0]) != int and args[0] is not None:
+                    raise TypeError("id must be an integer")
+                self.id = args[0]
+            if len(args) > 1:
+                self.size = args[1]
+            if len(args) > 2:
+                self.x = args[2]
+            if len(args) > 3:
+                self.y = args[3]
         else:
             for key, value in kwargs.items():
-                if (key == 'id'):
-                    super().update(value)
-                else:
-                    setattr(self, key, value)
+                if key == "id":
+                    if type(value) != int and value is not None:
+                        raise TypeError("id must be an integer")
+                    self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def to_dictionary(self):
-        """ returns the dictionary representation of a Square """
-        my_dict = {
-            'id': self.id,
-            'size': self.size,
-            'x': self.x,
-            'y': self.y
-        }
-        return (my_dict)
+        """Returns the dictionary representation of a Square."""
+
+        my_dict = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+        return my_dict
