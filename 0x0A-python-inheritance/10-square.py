@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This Module conatins class Square
+This Module conatins class Square that inherits from Rectangle
 """
 
 
