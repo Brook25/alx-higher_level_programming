@@ -4,7 +4,7 @@ This Module conatins class Square
 """
 
 
-Rectangle = __import__('class_Base_class').Rectangle
+Rectangle = __import__('9-rectangle.py').Rectangle
 
 
 class Square(Rectangle):
