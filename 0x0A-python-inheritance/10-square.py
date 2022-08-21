@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This Module contains class Square that inherits from Rectangle
+Contains the definition of the class square
 """
 
 
