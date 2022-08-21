@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Contains the definition,
+"""
+Module Contains the definition,
 of the class square.
 """
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 Rectangle = __import__('9-rectangle.py').Rectangle
 
 
