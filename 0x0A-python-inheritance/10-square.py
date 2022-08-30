@@ -3,7 +3,6 @@
 This Module contains class Square that inherits from Rectangle.
 """
 
-
 Rectangle = __import__('9-rectangle.py').Rectangle
 
 
