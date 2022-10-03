@@ -1,5 +1,4 @@
 #!/usr/bin/node
-// function
 let myObject = {
   type: 'object',
   value: 12
