@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Thist script takes a URL as argument, sends a request to the URL and displays the value of the
-X-Request-Id variable in the header of the response"""
+"""script takes URL as argument, sends a request to the URL. Displays value of
+X-Request-Id variable in header of response"""
 
 
 if __name__ == "__main__":

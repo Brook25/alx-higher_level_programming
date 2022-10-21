@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""This takes a URL and an email as arguments, sends a POST request to the passed URL with the
-email as a parameter, and displays the body of the response"""
+"""takes URL and email as args, sends POST request to the passed URL with the
+email as parameter, and displays body of the response"""
 if __name__ == "__main__":
     import urllib.request
     import urllib.parse
