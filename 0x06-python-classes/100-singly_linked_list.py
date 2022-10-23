@@ -51,11 +51,11 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """Object Method to implement sorted insert"""
-        if self.__head.next_node is None:
-            self.__head.next_node = Node(value)
+        if self.head.next_node is None:
+            self.head.next_node = Node(value)
         else:
-            temp = self.__head.next_node
-            temp1 = self.__head
+            temp = self.head.next_node
+            temp1 = self.head
             while temp is not None and temp.data < value:
                 temp1 = temp
                 temp = temp.next_node
@@ -66,7 +66,7 @@ class SinglyLinkedList:
     def __repr__(self):
         """Makes the List printable"""
         out_put = ""
-        temp2 = self.__head.next_node
+        temp2 = self.head.next_node
         while temp2 is not None:
             out_put += str(temp2.data) + '\n'
             temp2 = temp2.next_node
