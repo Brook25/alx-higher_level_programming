@@ -19,5 +19,5 @@ if __name__ == '__main__':
                 ORDER BY cities.id ASC", (sys.argv[4],))
     rows = [row[0] for row in cur.fetchall()]
     print(", ".join(rows))
-    curr.close()
+    cur.close()
     db.close()
