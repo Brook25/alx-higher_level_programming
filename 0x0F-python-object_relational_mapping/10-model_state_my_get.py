@@ -11,8 +11,7 @@ if __name__ == "__main__":
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(sys.argv[1], sys.argv[2],
-                                   sys.argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
+                                   sys.argv[3]))
 
     session = Session(engine)
     state = session.query(State.id).filter_by(name=sys.argv[4]).first()
