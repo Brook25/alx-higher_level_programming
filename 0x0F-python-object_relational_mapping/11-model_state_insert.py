@@ -16,6 +16,6 @@ if __name__ == "__main__":
     session = Session(engine)
     session.add(State(name="Louisiana"))
     session.commit()
-    row = session.query(State).filter(State.name == 'Louisiana').scalar()
+    row = session.query(State).filter_by(name='Louisiana').scalar()
     print(row.id)
     session.close()
