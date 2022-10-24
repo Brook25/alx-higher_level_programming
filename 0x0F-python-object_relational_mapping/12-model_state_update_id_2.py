@@ -15,6 +15,6 @@ if __name__ == "__main__":
                                    sys.argv[3]), pool_pre_ping=True)
 
     session = Session(engine)
-    session.query(State).where(State.id == 2).update({State.name = 'New Mexico'})
+    session.query(State).where(State.id == 2).update({State.name: 'New Mexico'})
     session.commit()
     session.close()
