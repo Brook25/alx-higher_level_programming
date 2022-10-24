@@ -15,9 +15,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    state = session.query(State).filter(State.name == sys.argv[4]).first()
+    state = session.query(State.id).filter_by(State.name=sys.argv[4]).first()
     if state:
-        print("{}".format(state.id))
+        print(state.id)
     else:
         print("Not found")
     session.close()
