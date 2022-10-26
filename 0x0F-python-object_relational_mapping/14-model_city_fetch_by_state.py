@@ -16,6 +16,6 @@ if __name__ == "__main__":
     stmt = session.query(State.id, State.name.\
             label('sname')).subquery()
     for s, cid, c in session.query(stmt.c.sname, City.id, City.name)\
-            .join(stmt, City.state_id==stmt.c.id):
+            .join(stmt, City.state_id==stmt.c.id).order_by(City.id):
         print('{}: ({}) {}'.format(s, cid, c))
     session.close()
