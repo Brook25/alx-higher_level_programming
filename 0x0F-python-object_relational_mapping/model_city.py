@@ -16,6 +16,3 @@ class City(State):
                 primary_key=True, nullable=False, unique=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
-if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://brook:Volcano27!@localhost/hbtn_0d_usa')
-    Base.metadata.create_all(engine)
