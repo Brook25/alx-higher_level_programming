@@ -1,24 +1,26 @@
 #!/usr/bin/python3
-"""Script lists all State objects, and corresponding City objects,
-contained in the database hbtn_0e_101_usa"""
+"""
+This script lists related state and city objects
+in order of ids
+"""
 
 if __name__ == "__main__":
-
-    import sys
-    from relationship_state import Base, State
-    from relationship_city import City
+    
+    from relationship_city import Base, City, State
     from sqlalchemy import create_engine
     from sqlalchemy.orm import Session
-    from sqlalchemy.schema import Table
+    import sys
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(sys.argv[1], sys.argv[2],
-                                   sys.argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
+                    .format(sys.argv[1], sys.argv[2], sys.argv[3]))
 
     session = Session(engine)
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
-        for city in state.cities:
-            print("    {}: {}".format(city.id, city.name))
+    lst = []
+    for row in session.query(State.id.label('sid'), State.name.
+            label('sname'), City.id, City.name).join(State.cities)\
+            .order_by(State.id).order_by(City.id).all():
+        if row.sid not in lst:
+            lst.append(row.sid)
+            print('{}: {}'.format(row.sid, row.sname))
+        print('    {}: {}'.format(row.id, row.name))
     session.close()
