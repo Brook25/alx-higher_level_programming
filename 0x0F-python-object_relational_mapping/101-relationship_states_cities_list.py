@@ -17,7 +17,7 @@ if __name__ == "__main__":
     session = Session(engine)
     lst = []
     for state, cid, cname in session.\
-            query(State, City.id, City.name).join(City).order_by(State.id):
+            query(State, City.id, City.name).join(State.cities).order_by(State.id):
         if state not in lst:
             lst.append(state)
             print('{}: {}'.format(state.id, state.name))
