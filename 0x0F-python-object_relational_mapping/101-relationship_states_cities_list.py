@@ -15,11 +15,8 @@ if __name__ == "__main__":
                                    sys.argv[2], sys.argv[3]))
 
     session = Session(engine)
-    lst = []
-    for state, cid, cname in session.\
-            query(State, City.id, City.name).join(State.cities).order_by(State.id):
-        if state not in lst:
-            lst.append(state)
-            print('{}: {}'.format(state.id, state.name))
-        print('    {}: {}'.format(cid, cname))
+    for row in session.query(State).order_by(State.id):
+        print('{}: {}'.format(row.id, row.name))
+        for row1 in row.cities:
+            print('    {}: {}'.format(row1.id, row1.name))
     session.close()
