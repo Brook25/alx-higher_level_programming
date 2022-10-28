@@ -10,12 +10,11 @@ if __name__ == "__main__":
     from sqlalchemy.orm import Session
     import sys
 
-    engine = create_engine('mysql+mysqldb://{}:{}/{}'
-            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]))
     
     session = Session(engine)
     for row in session.query(State).order_by(State.id):
-        print('{}: {}'.format(row.id, row.name)
-                for row1 in State.cities:
-                    print('    {}: {}'.format(row1.id, row1.name)
+        print('{}: {}'.format(row.id, row.name))
+        for row1 in row.cities:
+            print('    {}: {}'.format(row1.id, row1.name))
     session.close()
