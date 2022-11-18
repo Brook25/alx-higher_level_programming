@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""This script fetches https://alx-intranet.hbtn.io/status"""
+"""This script fetches url https://alx-intranet.hbtn.io/status"""
 
 
 if __name__ == "__main__":
     import urllib.request
 
     with urllib.request.urlopen('https://alx-intranet.hbtn.io/status')\
-            as response:
-        html = response.read()
+            as resp:
+        content = resp.read()
         print('Body response:')
-        print('\t- type: {}'.format(type(html)))
-        print('\t- content: {}'.format(html))
-        print('\t- utf8 content: {}'.format(html.decode("utf-8", "replace")))
+        print('    - type: {}'.format(type(content)))
+        print('    - content: {}'.format(content))
+        print('    - utf8 content: {}'.format(content.decode("utf-8")))
