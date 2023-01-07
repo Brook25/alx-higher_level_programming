@@ -38,9 +38,12 @@ size_t count_listint(const listint_t *h)
 
 int is_palindrome(listint_t **head)
 {
-unsigned int num = count_listint((const listint_t *) *head);
-int num_arr[num / 2];
+unsigned int num;
+int num_arr[1240];
 unsigned int i;
+
+num = count_listint((const listint_t *) *head);
+
 for (i = 0; i < num / 2; i++)
 {
 	num_arr[i] = (*head)->n;
